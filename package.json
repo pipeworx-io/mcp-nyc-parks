@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-nyc-parks",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "NYC Parks Events MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-nyc-parks": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "nyc-parks"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-nyc-parks.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/nyc-parks",
   "pipeworx": {
-    "sourceHash": "v1-3aef75abb991afd4af0bff5beff67521ca2e65779a3efb969e594e3b394c118a",
-    "sourceCommit": "f54ad77e789f27fe393978f9c080b5b18c87bb4f"
+    "mode": "gateway",
+    "slug": "nyc-parks",
+    "gatewaySlug": "nyc-parks",
+    "sourceHash": "v1-a4e5101abc2628c2bfe89a1daffd6333d6d3f4b40cd99a9da6f7917fc72e6b58",
+    "sourceCommit": "b2c4383545bb35171d0ada2beb1c9c7168ea175e"
   }
 }
